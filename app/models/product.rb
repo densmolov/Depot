@@ -6,4 +6,5 @@ class Product < ActiveRecord::Base
 		with: %r{\.(gif|jpg|jpeg|png)\Z}i,
 		message: 'is not valid. Url must have a .jpg, .gif or .png extension.'
 	}
+	validates :title, length: {minimum: 9}
 end

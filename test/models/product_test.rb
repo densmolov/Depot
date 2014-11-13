@@ -72,4 +72,19 @@ class ProductTest < ActiveSupport::TestCase
         assert_equal ["has already been taken"], product.errors[:title]
     end
 
+#________________________________________________________________
+
+	test "product title length must be greater than or equal to 10 symbols" do
+		product = Product.new(description: "yyy", image_url: "zzz.jpg", price: 1)
+
+		product.title = "too short"    # 9 symbols
+		assert product.valid?
+		#assert_equal ["product title length must be greater than or equal to 10 symbols"],
+			#product.errors[:title]
+		#assert product.errors[:title].any?
+
+		product.title = "It is long enough"    # 17 symbols
+		assert product.valid?
+	end
+
 end
