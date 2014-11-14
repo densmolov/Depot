@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class StoreControllerTest < ActionController::TestCase
+
+  # Functional tests
   test "should get index" do
     get :index
     assert_response :success

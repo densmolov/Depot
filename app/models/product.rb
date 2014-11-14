@@ -7,4 +7,9 @@ class Product < ActiveRecord::Base
 		message: 'is not valid. Url must have a .jpg, .gif or .png extension.'
 	}
 	validates :title, length: {minimum: 9}
+
+	def self.latest
+		Product.order(:updated_at).last
+	end
+
 end
