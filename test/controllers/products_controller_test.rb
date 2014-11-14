@@ -3,12 +3,12 @@ require 'test_helper'
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
-      @update = {
-        title: 'The life of Kolobok',
-        description: 'An old fairy-tale',
-        image_url: 'kolobok.jpeg',
-        price: 19.95
-      }
+    @update = {
+      title:       'Lorem Ipsum',
+      description: 'Wibbles are fun!',
+      image_url:   'lorem.jpg',
+      price:       19.95
+    }
   end
 
   test "should get index" do
@@ -26,7 +26,6 @@ class ProductsControllerTest < ActionController::TestCase
     assert_difference('Product.count') do
       post :create, product: @update
     end
-
     assert_redirected_to product_path(assigns(:product))
   end
 
@@ -49,8 +48,7 @@ class ProductsControllerTest < ActionController::TestCase
     assert_difference('Product.count', -1) do
       delete :destroy, id: @product
     end
-
     assert_redirected_to products_path
   end
-
+  
 end
