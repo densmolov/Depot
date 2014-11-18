@@ -57,9 +57,13 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item.destroy
+    @line_item = LineItem.find(params[:id])
+    @cart = Cart.find_by(id: @line_item.cart_id)
+    @line_item = @cart.remove_product(@line_item.id)
+    if @line_item.quantity == 0
+      @line_item.destroy
+    end
     respond_to do |format|
-      #format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
       format.html { redirect_to carts_url + '/' + session[:cart_id].to_s,
         notice: 'Line item was successfully removed from your cart.' }
       format.json { head :no_content }
@@ -67,13 +71,14 @@ class LineItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_line_item
-      @line_item = LineItem.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_line_item
+    @line_item = LineItem.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def line_item_params
-      params.require(:line_item).permit(:product_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def line_item_params
+    params.require(:line_item).permit(:product_id)
+  end
+
 end
