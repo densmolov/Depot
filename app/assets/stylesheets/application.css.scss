@@ -40,7 +40,7 @@
   background: #141;
 
   #main {
-    margin-left: 17em;
+    margin-left: 20em;
     padding: 1em;
     background: white;
   }
@@ -48,7 +48,7 @@
   #side {
     float: left;
     padding: 1em 2em;
-    width: 13em;
+    width: 16em;
     background: #141;
 
     form, div {
@@ -67,6 +67,10 @@
         border-top: 1px dotted #595;
         border-bottom: 1px dotted #595;
         margin-bottom: 10px;
+
+        td a{
+          color: #1ff;
+        }
       }
     }
   
