@@ -9,21 +9,25 @@
 
 <body class='<%= controller.controller_name %>'>
     <div id="banner">
-    	<%= image_tag("logo.png") %>
-    	<%= @page_title || "Pragmatic bookshelf" %>
+      <%= image_tag("logo.png") %>
+      <%= @page_title || "Pragmatic bookshelf" %>
     </div>
     <div id="columns">
-    	<div id="side">
-    		<ul>
-    			<li><a href="http://www....">Home</a></li>
-    			<li><a href="http://www..../faq">Questions</a></li>
-    			<li><a href="http://www..../news">News</a></li>
-    			<li><a href="http://www..../contact">Contact us</a></li>
-    		</ul>
-    	</div>
-    	<div id="main">
-    		<%= yield %>
-    	</div>
+      <div id="side">
+        <div id="cart">
+          <%= render @cart %>
+        </div>
+        
+        <ul>
+          <li><a href="http://www....">Home</a></li>
+          <li><a href="http://www..../faq">Questions</a></li>
+          <li><a href="http://www..../news">News</a></li>
+          <li><a href="http://www..../contact">Contact us</a></li>
+        </ul>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
     </div>
 
 </body>
