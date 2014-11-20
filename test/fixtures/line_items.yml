@@ -16,3 +16,7 @@ one:
 two:
   product: ruby
   cart: one
+
+ruby:
+  product: ruby
+  cart: one
