@@ -66,8 +66,7 @@ class LineItemsController < ApplicationController
     end
     respond_to do |format|
       #format.html { redirect_to carts_url + '/' + session[:cart_id].to_s,
-      format.html { redirect_to store_url,
-        notice: 'Line item was successfully removed from your cart.' }
+      format.html { redirect_to store_url }
       format.js { @current_item = @line_item }
       format.json { head :no_content }
     end
