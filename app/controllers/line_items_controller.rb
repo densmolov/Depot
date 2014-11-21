@@ -60,7 +60,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item = LineItem.find(params[:id])
     @cart = Cart.find_by(id: @line_item.cart_id)
-    @cart.remove_product(@line_item.id)
+    @line_item = @cart.remove_product(@line_item.id)
     respond_to do |format|
       format.html { redirect_to store_url }
       format.js { @current_item = @line_item }

@@ -11,7 +11,7 @@
 
 one:
   product: ruby
-  # cart: one
+  cart: one
   order: one
 
 two:
