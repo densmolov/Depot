@@ -1,7 +1,9 @@
 class StoreController < ApplicationController
   include CurrentCart
-  #before_action :set_cart 
+  #before_action :set_cart
 
+  skip_before_action :authorize
+  
   def index
     @products = Product.order(:title)
     @intermediate_counter = "It is your visit number #{count_before_adding_to_cart}."

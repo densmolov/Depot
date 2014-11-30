@@ -3,6 +3,8 @@ class CartsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
+  skip_before_action :authorize, only: [:create, :update, :destroy]
+
   # GET /carts
   # GET /carts.json
   def index
