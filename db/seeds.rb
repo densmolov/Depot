@@ -43,6 +43,7 @@ Product.create!(title: 'Rails Test Prescriptions',
   image_url: 'rtp.jpg',
   price: 34.95)
 
-PayType.create(:name => "Check")
-PayType.create(:name => "Credit card")
-PayType.create(:name => "Purchase order")
+PayType.delete_all
+PayType.create(:id => 1, :name => "Check")
+PayType.create(:id => 2, :name => "Credit card")
+PayType.create(:id => 3, :name => "Purchase order")
