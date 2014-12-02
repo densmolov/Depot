@@ -13,7 +13,7 @@ production:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: depot_production
+  database: db_prod
   pool: 5
   username: postgres
   password: password
@@ -23,7 +23,7 @@ development:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: depot_development
+  database: db_dev
   pool: 5
   username: postgres
   password: password
@@ -33,7 +33,7 @@ test:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: depot_test
+  database: db_test
   pool: 5
   username: postgres
   password: password
