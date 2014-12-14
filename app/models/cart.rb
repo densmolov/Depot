@@ -12,13 +12,6 @@ class Cart < ActiveRecord::Base
     return current_item
   end
 
-  # def remove_product(line_item_id)
-  #   current_item = line_items.find_by(id: line_item_id)
-  #   current_item.quantity -= 1
-  #   current_item.save!
-  #   return current_item
-  # end
-
   def remove_product(line_item_id)
     current_item = line_items.find_by(id: line_item_id)
     if current_item.quantity == 1

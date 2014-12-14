@@ -13,21 +13,20 @@
       <%= @page_title || "Pragmatic bookshelf" %>
     </div>
     <div id="columns">
+    
       <div id="side">
-        <div id="cart">
-          <% if @cart %>
-            <% hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-              <%= render @cart %>
-            <% end %>
+
+      <% if not session[:user_id] %>
+        <%= link_to 'Login as administrator', login_path %>
+      <% end %>
+
+      <div id="cart">
+        <% if @cart %>
+          <% hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+            <%= render @cart %>
           <% end %>
-        </div>
-        
-        <ul>
-          <li><a href="http://www....">Home</a></li>
-          <li><a href="http://www..../faq">Questions</a></li>
-          <li><a href="http://www..../news">News</a></li>
-          <li><a href="http://www..../contact">Contact us</a></li>
-        </ul>
+        <% end %>
+      </div>      
 
       <% if session[:user_id] %>
         <ul>
@@ -39,6 +38,7 @@
       <% end %>
 
       </div>
+
       <div id="main">
         <%= yield %>
       </div>
