@@ -8,6 +8,10 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+    @total_orders = Order.count
+    if @total_orders == 0
+      @total_orders = 'no'
+    end
   end
 
   # GET /orders/1

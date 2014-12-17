@@ -10,16 +10,16 @@
  * at the top of the compiled file, but it's generally better to create a new
  * file per style scope.
  * 
+ *= require bootstrap
  *= require_self
  *= require_tree .
  */
 
 #banner {
-  background: #9c9;
+  background: #E0EBFF;
   padding: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  border-bottom: 1px solid;
+  font-size: 28px;
   text-align: center;
 
   img {
@@ -29,15 +29,15 @@
 
 #notice {
   color: #000 !important;
-  border: 2px solid red;
+  border: 2px solid orange;
   padding: 1em;
   margin-bottom: 2em;
   background-color: #f0f0f0;
-  font: bold smaller sans-serif;
+  font: bold smaller;
 }
 
 #columns {
-  background: #141;
+  background: #F0F5FF;
 
   #main {
     margin-left: 20em;
@@ -49,7 +49,10 @@
     float: left;
     padding: 1em 2em;
     width: 16em;
-    background: #141;
+
+    a {
+      color: #337AB7;
+    }
 
     form, div {
       display: inline;
@@ -60,16 +63,15 @@
     }
 
     #cart {
-      fon-size: smaller;
-      color: white;
+      font-size: smaller;
+      color: #44a;
 
       table {
-        border-top: 1px dotted #595;
-        border-bottom: 1px dotted #595;
         margin-bottom: 10px;
+        color: #337AB7;
 
         td a{
-          color: #1ff;
+          color: #337AB7;
         }
       }
     }
@@ -78,43 +80,17 @@
       padding: 0;
       li {
         list-style: none;
-        a {
-          color: #bfb;
-          font-size: small;
-        }
       }
     }
+
   }
 
   .depot_form {
     fieldset {
-      background: #efe;
-      legend {
-        color: #dfd;
-        background: #141;
-        font-family: sans-serif;
-        padding: 0.2em 1em;
-      }
+      background: white;
+      width: 30%;
     }
-    form {
-      label {
-        width: 5em;
-        float: left;
-        text-align: right;
-        padding-top: 0.2em;
-        margin-right: 0.1em;
-        display: block;
-      }
-      select, textarea, input {
-        margin-left: 0.5em;
-      }
-      .submit {
-        margin-left: 4em;
-      }
-      br {
-        display: none;
-      }
-    }
+
   }
 
 }

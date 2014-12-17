@@ -1,6 +1,6 @@
-<h1>All products</h1>
+<h2>All products</h2>
 
-<table>
+<table class="table table-striped">
 <% @products.each do |product| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td>
@@ -25,4 +25,4 @@
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Add a new product', new_product_path %>

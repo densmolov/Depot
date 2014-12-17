@@ -1,7 +1,7 @@
 $('#cart').html("<%= escape_javascript render(@cart) %>");
 
-$('#current_item').css({'background-color':'#FFFF00'}).
-  animate({'background-color':'#114411'}, 1000);
+$('#current_item').css({'color':'orange'}).
+  animate({'color':'#337AB7'}, 1500);
   
 if ($('#cart tr').length == 1) {
   $('#cart').hide('blind', 1000);

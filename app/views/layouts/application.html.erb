@@ -8,16 +8,14 @@
 </head>
 
 <body class='<%= controller.controller_name %>'>
-    <div id="banner">
-      <%= image_tag("logo.png") %>
-      <%= @page_title || "Pragmatic bookshelf" %>
-    </div>
+    <div id="banner">Book Store online</div>
+
     <div id="columns">
     
       <div id="side">
 
       <% if not session[:user_id] %>
-        <%= link_to 'Login as administrator', login_path %>
+        <%= link_to 'Login as administrator', login_path, type: "button", class: "btn btn-link" %>
       <% end %>
 
       <div id="cart">
@@ -30,11 +28,14 @@
 
       <% if session[:user_id] %>
         <ul>
-          <li> <%= link_to 'Orders', orders_path %> </li>
-          <li> <%= link_to 'Products', products_path %> </li>
-          <li> <%= link_to 'Users', users_path %> </li>
+          <li> <%= link_to 'ORDERS', orders_path, type: "button", class: "btn btn-link" %>
+            <span class="badge"> <%= @total_orders %> </span>
+          </li>
+          <li> <%= link_to 'PRODUCTS', products_path, type: "button",
+            class: "btn btn-link" %> </li>
+          <li> <%= link_to 'USERS', users_path, type: "button", class: "btn btn-link" %> </li>
         </ul>
-        <%= button_to 'Logout', logout_path, method: :delete %>
+        <%= button_to 'Logout', logout_path, method: :delete, class: "btn btn-info" %>
       <% end %>
 
       </div>

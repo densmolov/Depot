@@ -2,9 +2,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Your catalog</h1>
-    <p><%= @intermediate_counter %></p>
-    <p><%= @ultimate_counter %></p>
+<h1>Our catalog</h1>
 
 <% cache ['store', Product.latest] do %>
     <% @products.each do |product| %>

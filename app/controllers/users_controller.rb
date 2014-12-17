@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.order(:name)
+    @total_orders = Order.count
+    if @total_orders == 0
+      @total_orders = 'no'
+    end
   end
 
   # GET /users/1
