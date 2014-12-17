@@ -16,20 +16,15 @@
  */
 
 #banner {
-  background: #E0EBFF;
+  background: #BDCCFF;
   padding: 10px;
-  border-bottom: 1px solid;
   font-size: 28px;
   text-align: center;
-
-  img {
-    float: left;
-  }
 }
 
 #notice {
   color: #000 !important;
-  border: 2px solid orange;
+  border: 2px solid #FF8F00;
   padding: 1em;
   margin-bottom: 2em;
   background-color: #f0f0f0;
@@ -40,15 +35,20 @@
   background: #F0F5FF;
 
   #main {
-    margin-left: 30em;
-    padding: 1em;
-    background: white;
+    padding: 15px;
+    background-color: white;
+    display: block;
+    width: 70%;
+    float: right;
   }
 
   #side {
     float: left;
-    padding: 1em 2em;
-    width: 29em;
+    padding: 15px;
+    display: block;
+    width: 30%;
+    min-height: 600px;
+    background-color: #F1EFFF;
 
     a {
       color: #337AB7;
@@ -67,8 +67,12 @@
     }
 
     #cart {
-      font-size: smaller;
-      color: #44a;
+
+      h2 {
+        font-size: 20px;
+        text-position: center;
+        text-align: center;
+      }
 
       table {
         margin-bottom: 10px;

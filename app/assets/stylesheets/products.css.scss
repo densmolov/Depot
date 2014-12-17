@@ -4,16 +4,22 @@
 
 .products {
 
+  input, textarea {
+    width: 320px;
+  }
+
   .list_image {
-    width: 20%;
+    width: 50%;
+  }
+
+  #td_image_tag {
+    width: 100px;
   }
 
   .list_description {
-  
     dt {
-      font-size:    larger;
+      font-size: larger;
     }
-
   }
 
 }

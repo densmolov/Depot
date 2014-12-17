@@ -27,7 +27,6 @@
     <%= f.label :pay_type %><br>
     <%= collection_select(:order, :pay_type_id, PayType.all, :id, :name) %>
   </div>
-  <div class="actions">
-    <%= f.submit 'Place Order' %>
-  </div>
+  </br>
+  <button class="btn btn-success" type="submit">Place order</button>
 <% end %>

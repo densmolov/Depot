@@ -1,8 +1,9 @@
 <h1>Listing orders</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Address</th>
       <th>Email</th>
@@ -14,13 +15,14 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
+        <td><%= order.id %></td>
         <td><%= order.name %></td>
         <td><%= order.address %></td>
         <td><%= order.email %></td>
         <td><%= order.pay_type.name %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
