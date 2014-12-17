@@ -5,10 +5,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-    @total_orders = Order.count
-    if @total_orders == 0
-      @total_orders = 'no'
-    end
   end
 
   # GET /products/1
