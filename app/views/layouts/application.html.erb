@@ -28,6 +28,9 @@
 
       <% if session[:user_id] %>
         <ul>
+          <li> <%= link_to 'HOME', admin_path, type: 'button',
+            class: 'btn btn-link' %>
+          </li>
           <li> <%= link_to 'ORDERS', orders_path, type: 'button', class: 'btn btn-link' %>
             <span class='badge'> <%= get_total_orders %> </span>
           </li>
